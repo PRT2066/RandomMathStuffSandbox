@@ -30,7 +30,7 @@ public class CalculateStuff {
                 // If the number divides cleanly then we don't need to output with scale and/or rounding.
                 // Otherwise, while it's not exactly precise...I'm deciding to limit scale to 3 places.
                 try {
-                    return num1.divide(num2);
+                    return num1.divide(num2, RoundingMode.UNNECESSARY);
                 } catch (ArithmeticException e) {
                     return num1.divide(num2, 3, RoundingMode.HALF_UP);
                 }
